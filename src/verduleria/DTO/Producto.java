@@ -54,7 +54,9 @@ public class Producto {
     }
 
     public void setPrecio(int Precio) {
-        this.Precio = Precio;
+        if(Precio > 0){
+            this.Precio = Precio;
+        }
     }
 
     public String getMedida() {
@@ -73,5 +75,9 @@ public class Producto {
         this.Cantidad = Cantidad;
     }
     
-    
+    @Override
+    public String toString(){
+        return this.Descripcion + " $" + this.Precio +
+                " " + this.Cantidad + " " + this.Medida;
+    }
 }
